@@ -1,20 +1,16 @@
-Package: bst260project
-Title: project code and narrative
+Package: finalproject
+Title: BST260 Final Project
 Version: 0.0.3
-Authors@R:
-    person(given = "yourfirstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "youremail@gmail.com",
-           comment = c(ORCID = "0000-0002-1825-0097"))
-Description: provide text on what your project emphasizes and 
-	accomplishes in three or more complete sentences.
+Authors@R: person("Yikai", "Zhang", role = c("aut", "cre"), email =
+        "YikaiZhang003@users.noreply.github.com")
+Description: Coursework for BST260. Uses public health datasets.
+        Includes data analysis and visualization.
 Depends: R (>= 4.5.0)
-Suggests: knitr, testthat, rmarkdown, pkgdown
+Suggests: knitr, testthat, rmarkdown, pkgdown, quarto
 License: Artistic-2.0
 VignetteBuilder: quarto
 Encoding: UTF-8
-URL: https://github.com/youreponame
-BugReports: https://github.com/youreponame/issues
+URL: https://YikaiZhang003.github.io/finalproject/
+BugReports: https://github.com/YikaiZhang003/finalproject/issues
 Config/roxygen2/version: 8.1.1
 Roxygen: list(markdown=TRUE)
