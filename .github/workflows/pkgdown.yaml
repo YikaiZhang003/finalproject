@@ -23,7 +23,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::pkgdown, any::quarto, any::devtools
+          extra-packages: any::pkgdown, any::quarto, any::devtools, any::remotes
           needs: website
       - name: Update package references
         shell: Rscript {0}
