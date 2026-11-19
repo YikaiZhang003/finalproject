@@ -10,7 +10,8 @@ Suggests: knitr, testthat, rmarkdown, pkgdown, quarto
 License: Artistic-2.0
 VignetteBuilder: quarto
 Encoding: UTF-8
-URL: https://YikaiZhang003.github.io/finalproject/
+URL: https://github.com/YikaiZhang003/finalproject,
+        https://YikaiZhang003.github.io/finalproject/
 BugReports: https://github.com/YikaiZhang003/finalproject/issues
 Config/roxygen2/version: 8.1.1
 Roxygen: list(markdown=TRUE)
