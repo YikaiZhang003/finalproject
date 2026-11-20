@@ -1,4 +1,5 @@
 url: https://YikaiZhang003.github.io/finalproject/
 destination: docs
+llm-docs: false
 template:
   bootstrap: 5

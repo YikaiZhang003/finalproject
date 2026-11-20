@@ -1,0 +1,45 @@
+---
+title: "State-level homicide and firearm mortality, 2017–2024"
+author: "Yikai Zhang"
+format: html
+---
+
+BST260 Teaching Team, Fall 2026
+
+## Research question
+
+The two vignettes will address the following questions:
+
+1. How is calendar period (2017–2019, 2020–2022, and 2023–2024) associated with state-level age-adjusted homicide mortality rates?
+2. How is calendar period (2017–2019, 2020–2022, and 2023–2024) associated with state-level age-adjusted firearm mortality rates?
+
+I will examine whether changes within states show similar geographic patterns for these two outcomes. The periods provide a common framework for comparison; they do not identify the effect of the COVID-19 pandemic or any particular policy.
+
+## Data and variables
+
+I will use two course datasets included in `finalproject`: `cdcmurd` and `cdcfiremort`. Their sources are the CDC's [Homicide Mortality](https://www.cdc.gov/nchs/state-stats/deaths/homicide.html) and [Firearm Mortality](https://www.cdc.gov/nchs/state-stats/deaths/firearms.html) pages. I will document the package version, source links, available years, and any corrections made after checking the source data.
+
+The unit of analysis will be a state-year, covering the 50 states and Washington, D.C., from 2017 through 2024. The explanatory variable will be calendar period, coded as a three-level factor with 2017–2019 as the reference. Each analysis will have one continuous outcome: the corresponding age-adjusted death rate per 100,000 people. Death counts will provide descriptive context. I will confirm the rate definitions for the included years before comparing them.
+
+I will standardize state identifiers using the state codes in the source URL field and verify one record per state-year. Both datasets contain `YEAR`, `Location`, and `Death.Rate`; the count fields are `Deaths` in `cdcmurd` and `Deaths.` in `cdcfiremort`. When comparing the two outcomes, I will match records by state and year.
+
+## Data quality and missing values
+
+I will report missing rates by state and year. Some homicide records contain a zero rate despite a positive death count. I will check these against CDC source records, use a documented correction when available, and otherwise treat the rate as missing. I will not replace missing or suppressed rates with zero or reconstruct age-adjusted rates from death counts.
+
+The primary analysis of each outcome will include states with valid rates in all eight years. As a sensitivity analysis, I will use states with at least two valid years in each period and report their coverage. Comparisons between outcomes will use their common eligible states.
+
+## Planned analyses and vignettes
+
+1. **Homicide mortality:** Summarize annual rates and death counts, map state differences, and plot annual trends. For each state, calculate the mean annual rate within each period and the absolute change from 2017–2019 to each later period. Summarize these changes using medians and interquartile ranges.
+2. **Firearm mortality:** Apply the same summaries and visualizations to firearm deaths. Compare state-level changes in the two outcomes using paired plots and a scatterplot, while recognizing that the categories overlap.
+
+Period comparisons will use mean annual rates rather than total deaths across unequal-length periods. Maps of change will use a consistent scale across periods within each outcome. Summaries across states will give states equal weight and will not be presented as national population mortality rates. I will write reusable R functions for period summaries and change calculations.
+
+As a secondary analysis, I will fit a separate linear model for each outcome with period indicators and state fixed effects. I will report period differences with 95% confidence intervals using standard errors clustered by state to account for repeated observations. The models will supplement the descriptive comparisons rather than establish causation.
+
+## Interpretation and limitations
+
+Before estimating period associations, I will account for stable differences between states through within-state comparisons and state fixed effects. The source rates already adjust for age distribution. Changes in economic conditions, population composition, and firearm policies could still influence the comparisons; these variables are not supplied in the selected datasets, so I cannot claim to adjust for them.
+
+Missing or unreliable rates may disproportionately affect small states, and the most recent period contains only two years. Homicide includes deaths involving different mechanisms, while firearm mortality includes different intents; neither dataset isolates firearm homicide. State-level associations cannot establish individual risk or identify a specific cause of change. The final reports will describe the observed patterns, uncertainty, and these limitations.
